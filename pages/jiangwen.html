@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+</head>
+<!-- 引入重置样式表 -->
+<link rel="stylesheet" href="../css/reset.css">
+<!-- 引入主页样式表 -->
+<link rel="stylesheet" href="../css/baoyou.css">
+
+<body>
+    <!-- 头部 -->
+    <div id="head">
+        <div class="container">
+            <!-- logo -->
+            <div class="logo">
+                <a href="#"><img src="../static/images/logo.png" alt="logo"></a>
+                <div class="right">
+                    <h3>熊猫优选</h3>
+                    <span>XIONG MAO YOU XUAN</span>
+                </div>
+            </div>
+
+            <!-- 搜索 -->
+            <div class="search">
+                <input type="text" placeholder="搜索商品，发现更多优惠">
+                <div class="btn">搜索</div>
+            </div>
+
+            <!-- 右侧图标 -->
+            <div class="ensure">
+                <ul>
+                    <li>
+                        <img src="../static/images/ensure1.png" alt="">
+                        <span>全程包邮</span>
+                    </li>
+                    <li>
+                        <img src="../static/images/ensure2.png" alt="">
+                        <span>7天退换</span>
+                    </li>
+                    <li>
+                        <img src="../static/images/ensure3.png" alt="">
+                        <span>品质保证</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 登陆 -->
+            <!-- <div class="land">
+                <span>登陆/注册</span>
+            </div> -->
+        </div>
+    </div>
+    <!-- 导航 -->
+    <div id="navigation">
+        <div class="nav container">
+            <ul>
+                <li class="index">首页</li>
+                <li class="baoyou">9块9包邮</li>
+                <li class="chaozhi">超值大额券</li>
+                <li class="jiangwen active">降温急救穿搭</li>
+            </ul>
+        </div>
+    </div>
+    <!-- banner -->
+    <div id="banner" class="container">
+        <div class="banner-title clearfix">
+            9块9专区
+        </div>
+    </div>
+    
+    <!-- 商品列表------------------------------------ -->
+    <div id="commodityList" class="container clearfix">
+
+        <!-- 商品数据 -->
+        <div class="commodityData clearfix">
+            <!-- 商品列表 -->
+            <ul class="clearfix">
+                <script type="text/html" id="product-list">
+                    {{ each }}
+                    <li onclick="turnToDetail({{$value.id}})">
+                        <div class="big">
+                            <div class="top">
+                                <img src="{{ $value.image }}" alt="">
+                            </div>
+                            <div class="bottom">
+                                <div class="synopsis">
+                                    {{$value.title}}
+                                </div>
+                                <div class="shop">
+                                    <span class="platform">淘宝</span>
+                                    <span class="more">大额券</span>
+                                    <span class="isFreePostage"></span>
+                                </div>
+                                <div class="price">
+                                    <div class="left">
+                                        <span>￥</span><span class="bigPrice"></span><span class="smallPrice"></span>
+                                        <span class="saleNum"></span>
+                                    </div>
+                                    <span class="right">{{$value.couponValue}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {{ /each }}
+                </script>
+            </ul>
+        </div>
+        <!-- 加载更多按钮 -->
+        <div class="load">
+            <div class="btn">查看更多</div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div id="footer">
+        <div class="big container">
+            <!-- logo区域 -->
+            <img src="../static/images/logo1.png" alt="" class="logo">
+            <div class="content">
+                <h1>熊猫优选</h1>
+                <p>年轻人购物首选<br>购物领券更省钱</p>
+            </div>
+
+            <!-- 下载文字区域 -->
+            <div class="download container">
+                <p>
+                    <span>|</span>
+                    <a href="#">下载APP</a>
+                </p>
+            </div>
+
+            <!-- 备案区域 -->
+            <div class="copyright container">
+                <div class="center">
+                    <img src="../static/images/beian1.png" alt="">
+                    <span>浙公安网备案 33010602009949号 |ICP备案号: </span>
+                    <a href="#">浙ICP备17012864号-1|</a>
+                    <img src="../static/images/beian2.png" alt="">
+                    <a href="#">证照信息</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 最下面得图片 -->
+    <div id="one">
+        <div>
+            <a href="#"><img src="../static/images/beian3.png" alt=""></a>
+        </div>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <div id="return">
+        <img src="../static/images/return.png" alt="">
+    </div>
+
+    <!-- 引入模板引擎 -->
+    <script src="../js/template-web.js"></script>
+    <!--  引入Ajax工具 -->
+    <script src="../js/util.js"></script>
+    <!-- 引入主页js -->
+    <script src="../js/jiangwen.js"></script>
+</body>
+
+</html>
